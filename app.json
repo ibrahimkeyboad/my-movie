@@ -3,8 +3,8 @@
     "name": "myMovie",
     "slug": "myMovie",
     "version": "1.0.0",
-
-    "scheme": "myMovie",
+    "newArchEnabled": true,
+    "scheme": "my-movie",
     "web": {
       "bundler": "metro",
       "output": "static",
