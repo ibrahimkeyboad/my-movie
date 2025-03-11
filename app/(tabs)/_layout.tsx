@@ -1,17 +1,20 @@
-import { Tabs } from 'expo-router';
-import { Image, ImageBackground, Text, View } from 'react-native';
+import { Tabs } from "expo-router";
+import { Image, ImageBackground, Text, View } from "react-native";
 
-import { icons } from '~/constants/icons';
-import { images } from '~/constants/images';
+import { icons } from "~/constants/icons";
+import { images } from "~/constants/images";
 
 function TabIcon({ title, icon, focused }) {
   if (focused) {
     return (
       <ImageBackground
         source={images.highlight}
-        className="mt-4 flex min-h-16 w-full min-w-[112px] flex-1 flex-row items-center justify-center overflow-hidden rounded-full">
+        className="mt-4 flex min-h-16 w-full min-w-[112px] flex-1 flex-row items-center justify-center overflow-hidden rounded-full"
+      >
         <Image source={icon} tintColor="#151312" className="size-5" />
-        <Text className="text-secondary ml-2 text-base font-semibold">{title}</Text>
+        <Text className="ml-2 text-base font-semibold text-secondary">
+          {title}
+        </Text>
       </ImageBackground>
     );
   }
@@ -29,28 +32,29 @@ export default function TabsLayout() {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarItemStyle: {
-          width: '100%',
-          height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
         },
         tabBarStyle: {
-          backgroundColor: '#0f0d23',
+          backgroundColor: "#0f0d23",
           borderRadius: 50,
           marginHorizontal: 10,
-          marginBottom: 5,
+          marginBottom: 10,
           height: 52,
-          position: 'absolute',
-          overflow: 'hidden',
+          position: "absolute",
+          overflow: "hidden",
           borderWidth: 1,
-          borderColor: '#0f0d23',
+          borderColor: "#0f0d23",
         },
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           headerShown: false,
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ focused }) => (
             <>
               <TabIcon focused={focused} icon={icons.home} title="Home" />
@@ -62,7 +66,7 @@ export default function TabsLayout() {
         name="search"
         options={{
           headerShown: false,
-          title: 'Search',
+          title: "Search",
           tabBarIcon: ({ focused }) => (
             <TabIcon title="Search" icon={icons.search} focused={focused} />
           ),
@@ -72,7 +76,7 @@ export default function TabsLayout() {
         name="saved"
         options={{
           headerShown: false,
-          title: 'Saved',
+          title: "Saved",
           tabBarIcon: ({ focused }) => (
             <TabIcon title="Saved" icon={icons.save} focused={focused} />
           ),
@@ -82,7 +86,7 @@ export default function TabsLayout() {
         name="profile"
         options={{
           headerShown: false,
-          title: 'Profile',
+          title: "Profile",
           tabBarIcon: ({ focused }) => (
             <TabIcon title="Profile" icon={icons.person} focused={focused} />
           ),
